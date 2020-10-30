@@ -14,34 +14,22 @@ public class Conditioner {
 
     public void setCurrentTemperature(int currentTemperature) {
         this.currentTemperature = currentTemperature;
+        if (currentTemperature > maxTemperature) {
+            setCurrentTemperature(maxTemperature);
+            return;
+        }
+        if (currentTemperature < minTemperature) {
+            setCurrentTemperature(minTemperature);
+            return;
+        }
     }
 
     public void increaseCurrentTemperature() {
-        // 28 подставлено , вместо currentTemperature для выполнения задания, по бранчам.
-        setCurrentTemperature(28 + 1);
-        if (currentTemperature > maxTemperature) {
-            setCurrentTemperature(maxTemperature);
-			
-    public void  setIncreaseCurrentTemperature (int increaseCurrentTemperature) {
-        this.increaseCurrentTemperature = increaseCurrentTemperature;
-        setCurrentTemperature(currentTemperature+1);
-        if (increaseCurrentTemperature > maxTemperature){
-            return;
-        }
+        setCurrentTemperature(currentTemperature + 1);
     }
 
     public void decreaseCurrentTemperature() {
-        // 17 подставлено , вместо currentTemperature для выполнения задания, по бранчам.
-        setCurrentTemperature(17 - 1);
-        if (currentTemperature < minTemperature) {
-            setCurrentTemperature(minTemperature);
-
-    public void setDecreaseCurrentTemperature (int decreaseCurrentTemperature) {
-        this.decreaseCurrentTemperature = decreaseCurrentTemperature;
-        setCurrentTemperature(currentTemperature-1);
-        if (decreaseCurrentTemperature < minTemperature){
-            return;
-        }
+        setCurrentTemperature(currentTemperature - 1);
     }
 }
 
